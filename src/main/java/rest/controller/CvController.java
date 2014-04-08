@@ -27,7 +27,7 @@ public class CvController {
     }
 
     @RequestMapping(method= RequestMethod.GET)
-    public @ResponseBody CvArray getCvInXML() {
+    public @ResponseBody CvArray getCvList() {
         CvArray list = new CvArray();
         list.cvList = cvList;
         return list;
@@ -44,7 +44,7 @@ public class CvController {
     @RequestMapping(value="{cv}", method = RequestMethod.PUT)
     public @ResponseBody String putCv(@PathVariable Cv cv) {
         if (cv == null) {
-           return "Erreur : Le CV ne peux pas être vide !";
+           return "Erreur : Le CV n'est pas valide, il ne peux pas être vide !";
         }
         final boolean result = cvList.add(cv);
         if (result) {
