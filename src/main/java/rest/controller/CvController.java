@@ -35,9 +35,22 @@ public class CvController {
 
     @RequestMapping(value="{id}", method = RequestMethod.GET)
     public @ResponseBody Cv getCvWithId(@PathVariable int id) {
-        if (id < 0 || id < cvList.size()) {
+        if (id < 0 || id > cvList.size()) {
             return null;
         }
         return cvList.get(id);
+    }
+
+    @RequestMapping(value="{cv}", method = RequestMethod.PUT)
+    public @ResponseBody String putCv(@PathVariable Cv cv) {
+        if (cv == null) {
+           return "Erreur : Le CV ne peux pas être vide !";
+        }
+        final boolean result = cvList.add(cv);
+        if (result) {
+            return "Succès : Le CV à été ajouté";
+        } else {
+            return  "Erreur : Le CV n'a pas pu être ajouté, veuillez contacter l'administrateur !"
+        }
     }
 }
