@@ -50,7 +50,7 @@ public class CvController {
         if (result) {
             return "Succès : Le CV à été ajouté";
         } else {
-            return  "Erreur : Le CV n'a pas pu être ajouté, veuillez contacter l'administrateur !"
+            return  "Erreur : Le CV n'a pas pu être ajouté, veuillez contacter l'administrateur !";
         }
     }
 }
