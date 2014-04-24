@@ -2,6 +2,7 @@ package rest.model;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
@@ -14,11 +15,11 @@ public class Cv {
     private String lastName;
     private String firstName;
     private String objectives;
-    private List<String> experiences;
-    private List<String> educations;
+    private List<Experience> experiences;
+    private List<Education> educations;
     private String skills;
     private List<Lang> langs;
-    private List<ITskill> itSkills;
+    private List<ITSkill> itSkills;
 
     public Cv() {}
 
@@ -26,11 +27,11 @@ public class Cv {
             String lastName,
             String firstName,
             String objectives,
-            List<String> experiences,
-            List<String> educations,
+            List<Experience> experiences,
+            List<Education> educations,
             String skills,
             List<Lang> langs,
-            List<ITskill> itSkills) {
+            List<ITSkill> itSkills) {
         this.firstName = firstName;
         this.objectives = objectives;
         this.lastName = lastName;
@@ -68,25 +69,25 @@ public class Cv {
         objectives = objectives;
     }
 
-    @XmlElement
-    public List<String> getEducations() {
+    @XmlElementWrapper(name = "schools")
+    public List<Education> getEducations() {
         return educations;
     }
 
-    public void setEducations(List<String> educations) {
+    public void setEducations(List<Education> educations) {
         this.educations = educations;
     }
 
-    @XmlElement
-    public List<String> getExperiences() {
+    @XmlElementWrapper(name = "experiences")
+    public List<Experience> getExperiences() {
         return experiences;
     }
 
-    public void setExperiences(List<String> experiences) {
+    public void setExperiences(List<Experience> experiences) {
         this.experiences = experiences;
     }
 
-    @XmlElement
+    @XmlElementWrapper(name = "skills")
     public String getSkills() {
         return skills;
     }
@@ -95,7 +96,7 @@ public class Cv {
         this.skills = skills;
     }
 
-    @XmlElement
+    @XmlElementWrapper(name = "langs")
     public List<Lang> getLangs() {
         return langs;
     }
@@ -104,70 +105,12 @@ public class Cv {
         this.langs = langs;
     }
 
-    @XmlElement
-    public List<ITskill> getItSkills() {
+    @XmlElementWrapper(name = "computerskills")
+    public List<ITSkill> getItSkills() {
         return itSkills;
     }
 
-    public void setItSkills(List<ITskill> itSkills) {
+    public void setItSkills(List<ITSkill> itSkills) {
         this.itSkills = itSkills;
-    }
-
-    // Classe interne pour les langues
-    public class Lang {
-        private int level;
-        private String langName;
-
-        public Lang(String name, int level) {
-            this.langName = name;
-            this.level = level;
-        }
-
-        @XmlAttribute
-        public int getLevel() {
-            return level;
-        }
-
-        public void setLevel(int level) {
-            this.level = level;
-        }
-
-        @XmlElement
-        public String getLangName() {
-            return langName;
-        }
-
-        public void setLangName(String langName) {
-            this.langName = langName;
-        }
-    }
-
-    // Classe interne pour les compétences informatiques
-    public class ITskill {
-        private int level;
-        private String skillName;
-
-        public ITskill(String name, int level) {
-            this.skillName = name;
-            this.level = level;
-        }
-
-        @XmlAttribute
-        public int getLevel() {
-            return level;
-        }
-
-        public void setLevel(int level) {
-            this.level = level;
-        }
-
-        @XmlElement
-        public String getSkillName() {
-            return skillName;
-        }
-
-        public void setSkillName(String skillName) {
-            this.skillName = skillName;
-        }
     }
 }
