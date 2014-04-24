@@ -22,15 +22,20 @@ public class CvController {
 
     //Charge quelques cv au démarrage
     static {
+        List<Experience> experiences = new ArrayList<Experience>();
+        List<Education> educations = new ArrayList<Education>();
+        List<Lang> langs = new ArrayList<Lang>();
+        List<ITSkill> itSkills = new ArrayList<ITSkill>();
+
         cvList.add(
             new Cv(
                 "Dupon",
                 "Jean",
                 "Creer un CV",
-                Arrays.asList(new String[] {"Experience 1"}),
-                Arrays.asList(new String[] {"Ecole 1"}),
+                experiences,
+                educations,
                 "Typographie",
-                null,
+                langs,
                 null
             )
         );
