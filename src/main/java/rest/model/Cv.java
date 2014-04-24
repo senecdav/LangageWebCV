@@ -87,7 +87,7 @@ public class Cv {
         this.experiences = experiences;
     }
 
-    @XmlElementWrapper(name = "skills")
+
     public String getSkills() {
         return skills;
     }
