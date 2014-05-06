@@ -56,7 +56,7 @@ public class CvController {
 
         cvList.add(
                 new Cv(
-                        0,
+                        1,
                         "Dupon2",
                         "Jean",
                         "Creer une liste",
