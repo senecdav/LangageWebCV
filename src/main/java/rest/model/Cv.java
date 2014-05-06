@@ -90,7 +90,8 @@ public class Cv {
         this.educations = educations;
     }
 
-    @XmlElementWrapper(name = "experience")
+    @XmlElementWrapper(name = "experiences")
+    @XmlElement(name = "experience")
     public List<Experience> getExperiences() {
         return experiences;
     }
