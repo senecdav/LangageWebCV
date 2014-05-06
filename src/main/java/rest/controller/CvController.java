@@ -42,6 +42,31 @@ public class CvController {
                 null
             )
         );
+
+
+        List<Experience> experiences2 = new ArrayList<Experience>();
+        List<Education> educations2 = new ArrayList<Education>();
+        List<Lang> langs2 = new ArrayList<Lang>();
+        List<ITSkill> itSkills2 = new ArrayList<ITSkill>();
+
+        experiences2.add(new Experience("Premiere Experience", "Premiere Experience", "2014"));
+        educations2.add(new Education("BTS", "BTS", "2009"));
+        langs2.add(new Lang("Anglais", 2));
+        itSkills2.add(new ITSkill("C", 1));
+
+        cvList.add(
+                new Cv(
+                        0,
+                        "Dupon2",
+                        "Jean",
+                        "Creer une liste",
+                        experiences2,
+                        educations2,
+                        "Aucun",
+                        langs2,
+                        itSkills2
+                )
+        );
         /*cvList.add(new Cv("Dupon2", "Jean", "Creer une liste"));
         cvList.add(new Cv("Dernier", "CV", "Hehe"));*/
     }
