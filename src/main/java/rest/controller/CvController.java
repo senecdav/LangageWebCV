@@ -27,6 +27,8 @@ public class CvController {
         List<Lang> langs = new ArrayList<Lang>();
         List<ITSkill> itSkills = new ArrayList<ITSkill>();
 
+        experiences.add(new Experience("test", null, null));
+
         cvList.add(
             new Cv(
                 "Dupon",
@@ -46,7 +48,7 @@ public class CvController {
     @RequestMapping(method= RequestMethod.GET)
     public @ResponseBody CvArray getCvList() {
         CvArray list = new CvArray();
-        list.cvList = cvList;
+        list.cv = cvList;
         return list;
     }
 
@@ -65,7 +67,7 @@ public class CvController {
         }
         final boolean result = cvList.add(cv);
         if (result) {
-            return "Succès : Le CV à été ajouté";
+            return "id:" + (cvList.size() - 1);
         } else {
             return  "Erreur : Le CV n'a pas pu être ajouté, veuillez contacter l'administrateur !";
         }
