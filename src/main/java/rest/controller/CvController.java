@@ -31,6 +31,7 @@ public class CvController {
 
         cvList.add(
             new Cv(
+                0,
                 "Dupon",
                 "Jean",
                 "Creer un CV",
@@ -66,8 +67,9 @@ public class CvController {
            return "Erreur : Le CV n'est pas valide, il ne peux pas être vide !";
         }
         final boolean result = cvList.add(cv);
+        cv.setId(cvList.size() - 1);
         if (result) {
-            return "id:" + (cvList.size() - 1);
+            return "id:" + (cv.getId());
         } else {
             return  "Erreur : Le CV n'a pas pu être ajouté, veuillez contacter l'administrateur !";
         }
