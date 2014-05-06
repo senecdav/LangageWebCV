@@ -10,5 +10,5 @@ import rest.model.*;
 @XmlRootElement(name = "listcv")
 public class CvArray {
 
-    public List<Cv> cvList;
+    public List<Cv> cv;
 }
