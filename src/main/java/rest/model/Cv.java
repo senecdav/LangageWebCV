@@ -82,6 +82,7 @@ public class Cv {
     }
 
     @XmlElementWrapper(name = "schools")
+    @XmlElement(name = "school")
     public List<Education> getEducations() {
         return educations;
     }
@@ -110,6 +111,7 @@ public class Cv {
     }
 
     @XmlElementWrapper(name = "langs")
+    @XmlElement(name = "lang")
     public List<Lang> getLangs() {
         return langs;
     }
@@ -119,6 +121,7 @@ public class Cv {
     }
 
     @XmlElementWrapper(name = "computerskills")
+    @XmlElement(name = "computeskill")
     public List<ITSkill> getItSkills() {
         return itSkills;
     }
