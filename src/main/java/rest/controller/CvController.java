@@ -1,10 +1,7 @@
 package rest.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import rest.model.*;
 
 import java.util.ArrayList;
@@ -86,8 +83,8 @@ public class CvController {
         return cvList.get(id);
     }
 
-    @RequestMapping(value="{cv}", method = RequestMethod.PUT)
-    public @ResponseBody String putCv(@PathVariable Cv cv) {
+    @RequestMapping(method = RequestMethod.PUT)
+    public @ResponseBody String putCv(@RequestBody Cv cv) {
         if (cv == null) {
            return "Erreur : Le CV n'est pas valide, il ne peux pas être vide !";
         }
