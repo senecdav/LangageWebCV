@@ -24,7 +24,7 @@ public class CvController {
         List<Lang> langs = new ArrayList<Lang>();
         List<ITSkill> itSkills = new ArrayList<ITSkill>();
 
-        experiences.add(new Experience("test", null, null));
+        experiences.add(new Experience("test", "test", "2014"));
 
         cvList.add(
             new Cv(
@@ -36,7 +36,7 @@ public class CvController {
                 educations,
                 "Typographie",
                 langs,
-                null
+                itSkills
             )
         );
 
@@ -47,6 +47,7 @@ public class CvController {
         List<ITSkill> itSkills2 = new ArrayList<ITSkill>();
 
         experiences2.add(new Experience("Premiere Experience", "Premiere Experience", "2014"));
+        experiences2.add(new Experience("Deuxieme Experience", "Deuxieme Experience", "2014"));
         educations2.add(new Education("BTS", "2009"));
         langs2.add(new Lang("Anglais", 2));
         itSkills2.add(new ITSkill("C", 1));
