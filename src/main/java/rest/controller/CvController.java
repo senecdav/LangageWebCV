@@ -47,7 +47,7 @@ public class CvController {
         List<ITSkill> itSkills2 = new ArrayList<ITSkill>();
 
         experiences2.add(new Experience("Premiere Experience", "Premiere Experience", "2014"));
-        educations2.add(new Education("BTS", "BTS", "2009"));
+        educations2.add(new Education("BTS", "2009"));
         langs2.add(new Lang("Anglais", 2));
         itSkills2.add(new ITSkill("C", 1));
 
@@ -77,7 +77,7 @@ public class CvController {
 
     @RequestMapping(value="{id}", method = RequestMethod.GET)
     public @ResponseBody Cv getCvWithId(@PathVariable int id) {
-        if (id < 0 || id > cvList.size()) {
+        if (id < 0 || id >= cvList.size()) {
             return null;
         }
         return cvList.get(id);
