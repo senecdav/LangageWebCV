@@ -78,7 +78,7 @@ public class Cv {
     }
 
     public void setObjectives(String objectives) {
-        objectives = objectives;
+        this.objectives = objectives;
     }
 
     @XmlElementWrapper(name = "schools")
