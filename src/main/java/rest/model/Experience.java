@@ -1,10 +1,12 @@
 package rest.model;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Created by si3ll on 4/24/14.
  */
+@XmlType(propOrder={"name", "year", "description"})
 public class Experience {
 
     private String name;
