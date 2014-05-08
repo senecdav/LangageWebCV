@@ -13,6 +13,8 @@ public class Experience {
     private String description;
     private String year;
 
+    public Experience() {}
+
     public Experience(String name, String description, String year) {
         this.name = name;
         this.description = description;

@@ -9,6 +9,8 @@ public class Education {
     private String name;
     private String year;
 
+    public Education() {}
+
     public Education(String name, String year) {
         this.name = name;
         this.year = year;

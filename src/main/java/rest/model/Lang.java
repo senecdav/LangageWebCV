@@ -10,6 +10,8 @@ public class Lang {
     private int level;
     private String langName;
 
+    public Lang() {}
+
     public Lang(String name, int level) {
         this.langName = name;
         this.level = level;

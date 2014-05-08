@@ -10,6 +10,8 @@ public class ITSkill {
     private int level;
     private String skillName;
 
+    public ITSkill() {}
+
     public ITSkill(String name, int level) {
         this.skillName = name;
         this.level = level;
